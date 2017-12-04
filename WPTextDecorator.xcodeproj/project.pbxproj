@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E46316721FD5837400240D5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46316711FD5837400240D5B /* AppDelegate.m */; };
+		E46316751FD5837400240D5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46316741FD5837400240D5B /* ViewController.m */; };
+		E46316771FD5837400240D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46316761FD5837400240D5B /* Assets.xcassets */; };
+		E463167A1FD5837400240D5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46316781FD5837400240D5B /* Main.storyboard */; };
+		E463167D1FD5837400240D5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E463167C1FD5837400240D5B /* main.m */; };
+		E46316881FD5837500240D5B /* WPTextDecoratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46316871FD5837500240D5B /* WPTextDecoratorTests.m */; };
+		E46316931FD5837500240D5B /* WPTextDecoratorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E46316921FD5837500240D5B /* WPTextDecoratorUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E46316841FD5837500240D5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E46316651FD5837400240D5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E463166C1FD5837400240D5B;
+			remoteInfo = WPTextDecorator;
+		};
+		E463168F1FD5837500240D5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E46316651FD5837400240D5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E463166C1FD5837400240D5B;
+			remoteInfo = WPTextDecorator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E463166D1FD5837400240D5B /* WPTextDecorator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTextDecorator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46316701FD5837400240D5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E46316711FD5837400240D5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E46316731FD5837400240D5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E46316741FD5837400240D5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E46316761FD5837400240D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E46316791FD5837400240D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E463167B1FD5837400240D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E463167C1FD5837400240D5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E463167E1FD5837400240D5B /* WPTextDecorator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WPTextDecorator.entitlements; sourceTree = "<group>"; };
+		E46316831FD5837500240D5B /* WPTextDecoratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WPTextDecoratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46316871FD5837500240D5B /* WPTextDecoratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPTextDecoratorTests.m; sourceTree = "<group>"; };
+		E46316891FD5837500240D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E463168E1FD5837500240D5B /* WPTextDecoratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WPTextDecoratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E46316921FD5837500240D5B /* WPTextDecoratorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPTextDecoratorUITests.m; sourceTree = "<group>"; };
+		E46316941FD5837500240D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E463166A1FD5837400240D5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46316801FD5837500240D5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E463168B1FD5837500240D5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E46316641FD5837400240D5B = {
+			isa = PBXGroup;
+			children = (
+				E463166F1FD5837400240D5B /* WPTextDecorator */,
+				E46316861FD5837500240D5B /* WPTextDecoratorTests */,
+				E46316911FD5837500240D5B /* WPTextDecoratorUITests */,
+				E463166E1FD5837400240D5B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E463166E1FD5837400240D5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E463166D1FD5837400240D5B /* WPTextDecorator.app */,
+				E46316831FD5837500240D5B /* WPTextDecoratorTests.xctest */,
+				E463168E1FD5837500240D5B /* WPTextDecoratorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E463166F1FD5837400240D5B /* WPTextDecorator */ = {
+			isa = PBXGroup;
+			children = (
+				E46316701FD5837400240D5B /* AppDelegate.h */,
+				E46316711FD5837400240D5B /* AppDelegate.m */,
+				E46316731FD5837400240D5B /* ViewController.h */,
+				E46316741FD5837400240D5B /* ViewController.m */,
+				E46316761FD5837400240D5B /* Assets.xcassets */,
+				E46316781FD5837400240D5B /* Main.storyboard */,
+				E463167B1FD5837400240D5B /* Info.plist */,
+				E463167C1FD5837400240D5B /* main.m */,
+				E463167E1FD5837400240D5B /* WPTextDecorator.entitlements */,
+			);
+			path = WPTextDecorator;
+			sourceTree = "<group>";
+		};
+		E46316861FD5837500240D5B /* WPTextDecoratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				E46316871FD5837500240D5B /* WPTextDecoratorTests.m */,
+				E46316891FD5837500240D5B /* Info.plist */,
+			);
+			path = WPTextDecoratorTests;
+			sourceTree = "<group>";
+		};
+		E46316911FD5837500240D5B /* WPTextDecoratorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E46316921FD5837500240D5B /* WPTextDecoratorUITests.m */,
+				E46316941FD5837500240D5B /* Info.plist */,
+			);
+			path = WPTextDecoratorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E463166C1FD5837400240D5B /* WPTextDecorator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E46316971FD5837500240D5B /* Build configuration list for PBXNativeTarget "WPTextDecorator" */;
+			buildPhases = (
+				E46316691FD5837400240D5B /* Sources */,
+				E463166A1FD5837400240D5B /* Frameworks */,
+				E463166B1FD5837400240D5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WPTextDecorator;
+			productName = WPTextDecorator;
+			productReference = E463166D1FD5837400240D5B /* WPTextDecorator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E46316821FD5837500240D5B /* WPTextDecoratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E463169A1FD5837500240D5B /* Build configuration list for PBXNativeTarget "WPTextDecoratorTests" */;
+			buildPhases = (
+				E463167F1FD5837500240D5B /* Sources */,
+				E46316801FD5837500240D5B /* Frameworks */,
+				E46316811FD5837500240D5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E46316851FD5837500240D5B /* PBXTargetDependency */,
+			);
+			name = WPTextDecoratorTests;
+			productName = WPTextDecoratorTests;
+			productReference = E46316831FD5837500240D5B /* WPTextDecoratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E463168D1FD5837500240D5B /* WPTextDecoratorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E463169D1FD5837500240D5B /* Build configuration list for PBXNativeTarget "WPTextDecoratorUITests" */;
+			buildPhases = (
+				E463168A1FD5837500240D5B /* Sources */,
+				E463168B1FD5837500240D5B /* Frameworks */,
+				E463168C1FD5837500240D5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E46316901FD5837500240D5B /* PBXTargetDependency */,
+			);
+			name = WPTextDecoratorUITests;
+			productName = WPTextDecoratorUITests;
+			productReference = E463168E1FD5837500240D5B /* WPTextDecoratorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E46316651FD5837400240D5B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = BenArvin;
+				TargetAttributes = {
+					E463166C1FD5837400240D5B = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					E46316821FD5837500240D5B = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E463166C1FD5837400240D5B;
+					};
+					E463168D1FD5837500240D5B = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E463166C1FD5837400240D5B;
+					};
+				};
+			};
+			buildConfigurationList = E46316681FD5837400240D5B /* Build configuration list for PBXProject "WPTextDecorator" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E46316641FD5837400240D5B;
+			productRefGroup = E463166E1FD5837400240D5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E463166C1FD5837400240D5B /* WPTextDecorator */,
+				E46316821FD5837500240D5B /* WPTextDecoratorTests */,
+				E463168D1FD5837500240D5B /* WPTextDecoratorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E463166B1FD5837400240D5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46316771FD5837400240D5B /* Assets.xcassets in Resources */,
+				E463167A1FD5837400240D5B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46316811FD5837500240D5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E463168C1FD5837500240D5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E46316691FD5837400240D5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46316751FD5837400240D5B /* ViewController.m in Sources */,
+				E463167D1FD5837400240D5B /* main.m in Sources */,
+				E46316721FD5837400240D5B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E463167F1FD5837500240D5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46316881FD5837500240D5B /* WPTextDecoratorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E463168A1FD5837500240D5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E46316931FD5837500240D5B /* WPTextDecoratorUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E46316851FD5837500240D5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E463166C1FD5837400240D5B /* WPTextDecorator */;
+			targetProxy = E46316841FD5837500240D5B /* PBXContainerItemProxy */;
+		};
+		E46316901FD5837500240D5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E463166C1FD5837400240D5B /* WPTextDecorator */;
+			targetProxy = E463168F1FD5837500240D5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E46316781FD5837400240D5B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E46316791FD5837400240D5B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E46316951FD5837500240D5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E46316961FD5837500240D5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E46316981FD5837500240D5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WPTextDecorator/WPTextDecorator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8T284JCWV7;
+				INFOPLIST_FILE = WPTextDecorator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.BenArvin.iphone.WPTextDecorator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E46316991FD5837500240D5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WPTextDecorator/WPTextDecorator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8T284JCWV7;
+				INFOPLIST_FILE = WPTextDecorator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.BenArvin.iphone.WPTextDecorator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E463169B1FD5837500240D5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8T284JCWV7;
+				INFOPLIST_FILE = WPTextDecoratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.BenArvin.iphone.WPTextDecoratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WPTextDecorator.app/Contents/MacOS/WPTextDecorator";
+			};
+			name = Debug;
+		};
+		E463169C1FD5837500240D5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8T284JCWV7;
+				INFOPLIST_FILE = WPTextDecoratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.BenArvin.iphone.WPTextDecoratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WPTextDecorator.app/Contents/MacOS/WPTextDecorator";
+			};
+			name = Release;
+		};
+		E463169E1FD5837500240D5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8T284JCWV7;
+				INFOPLIST_FILE = WPTextDecoratorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.BenArvin.iphone.WPTextDecoratorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WPTextDecorator;
+			};
+			name = Debug;
+		};
+		E463169F1FD5837500240D5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8T284JCWV7;
+				INFOPLIST_FILE = WPTextDecoratorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.BenArvin.iphone.WPTextDecoratorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WPTextDecorator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E46316681FD5837400240D5B /* Build configuration list for PBXProject "WPTextDecorator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46316951FD5837500240D5B /* Debug */,
+				E46316961FD5837500240D5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E46316971FD5837500240D5B /* Build configuration list for PBXNativeTarget "WPTextDecorator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E46316981FD5837500240D5B /* Debug */,
+				E46316991FD5837500240D5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E463169A1FD5837500240D5B /* Build configuration list for PBXNativeTarget "WPTextDecoratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E463169B1FD5837500240D5B /* Debug */,
+				E463169C1FD5837500240D5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E463169D1FD5837500240D5B /* Build configuration list for PBXNativeTarget "WPTextDecoratorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E463169E1FD5837500240D5B /* Debug */,
+				E463169F1FD5837500240D5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E46316651FD5837400240D5B /* Project object */;
+}
