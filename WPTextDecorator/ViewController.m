@@ -32,7 +32,7 @@
 @property (weak) IBOutlet NSButton *decorateButton;
 @property (weak) IBOutlet NSButton *recoverButton;
 
-@property (nonatomic) NSView *maskView;
+@property (weak) IBOutlet NSImageView *maskImageView;
 @property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 
 @end
@@ -47,7 +47,6 @@
 - (void)viewDidAppear
 {
     [super viewDidAppear];
-    [self addElements];
     [self setElementsStyle];
 }
 
@@ -120,12 +119,6 @@
 
 #pragma mark - private method
 #pragma mark elements method
-- (void)addElements
-{
-    self.maskView = [[NSView alloc] init];
-    [self.view addSubview:self.maskView];
-}
-
 - (void)setElementsFrame
 {
     CGRect bounds = self.view.bounds;
@@ -144,8 +137,9 @@
     self.decoratedScrollView.frame = CGRectMake(bounds.size.width - MARGIN_BORDER - scrollViewWidth, MARGIN_BORDER, scrollViewWidth, scrollViewHeight);
     self.decoratedTagLabel.frame = CGRectMake(CGRectGetMinX(self.decoratedScrollView.frame), CGRectGetMaxY(self.decoratedScrollView.frame) + MARGIN_SCROLLVIEW_TAGLABEL_Y, scrollViewWidth, HEIGHT_TAGLABEL);
     
-    self.maskView.frame = bounds;
     self.progressIndicator.frame = CGRectMake(floor((bounds.size.width - self.progressIndicator.bounds.size.width) / 2), floor((bounds.size.height - self.progressIndicator.bounds.size.height) / 2), self.progressIndicator.bounds.size.width, self.progressIndicator.bounds.size.height);
+    
+    self.maskImageView.frame = CGRectZero;
 }
 
 - (void)setElementsStyle
@@ -156,9 +150,9 @@
     self.decoratedTagLabel.alignment = NSTextAlignmentRight;
     [self.decoratedTagLabel setStringValue:@"decorated text"];
     
-    self.maskView.wantsLayer = YES;
-    self.maskView.layer.backgroundColor = [NSColor colorWithRed:0 green:0 blue:0 alpha:0.45].CGColor;
-    [self.maskView setAlphaValue:0.0];
+    self.maskImageView.wantsLayer = YES;
+    self.maskImageView.layer.backgroundColor = [NSColor colorWithRed:0 green:0 blue:0 alpha:0.45].CGColor;
+    [self.maskImageView setAlphaValue:0.0];
     
     self.progressIndicator.hidden = YES;
     [self.progressIndicator stopAnimation:nil];
@@ -214,7 +208,8 @@
     self.decoratedTextView.editable = NO;
     self.decoratedTextView.selectable = NO;
     [self.progressIndicator startAnimation:nil];
-    [self.maskView setAlphaValue:1.0];
+    self.maskImageView.frame = self.view.bounds;
+    [self.maskImageView setAlphaValue:1.0];
     self.progressIndicator.hidden = NO;
 }
 
@@ -227,7 +222,8 @@
     self.decoratedTextView.editable = YES;
     self.decoratedTextView.selectable = YES;
     [self.progressIndicator stopAnimation:nil];
-    [self.maskView setAlphaValue:0.0];
+    self.maskImageView.frame = CGRectZero;
+    [self.maskImageView setAlphaValue:0.0];
     self.progressIndicator.hidden = YES;
 }
 

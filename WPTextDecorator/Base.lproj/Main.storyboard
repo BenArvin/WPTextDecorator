@@ -807,6 +807,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcX-mE-VsV">
+                                <rect key="frame" x="525" y="81" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Gc6-z5-fUF"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
@@ -814,6 +819,7 @@
                         <outlet property="decoratedScrollView" destination="IQK-iZ-xSk" id="Mil-RX-lV4"/>
                         <outlet property="decoratedTagLabel" destination="5fc-83-iuX" id="sH8-Vo-czE"/>
                         <outlet property="decoratedTextView" destination="Gga-Ey-Hs6" id="s2Q-7H-1fJ"/>
+                        <outlet property="maskImageView" destination="gcX-mE-VsV" id="ls1-3b-jsQ"/>
                         <outlet property="originalScrollView" destination="32A-pY-kCv" id="DUq-TV-aMP"/>
                         <outlet property="originalTagLabel" destination="sLG-k9-6mq" id="H30-lW-WBi"/>
                         <outlet property="originalTextView" destination="SZh-Tg-Z6R" id="bEJ-pz-52G"/>
