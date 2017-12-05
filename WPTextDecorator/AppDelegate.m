@@ -34,7 +34,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wundeclared-selector"
     NSMenu *firstMenu = [[NSMenu alloc] init];
-    [firstMenu addItemWithTitle:@"关于WPTextDecorator" action:@selector(aboutAction) keyEquivalent:@""];
+    [firstMenu addItemWithTitle:@"关于WPTextDecorator" action:nil keyEquivalent:@""];
     [firstMenu addItem:[NSMenuItem separatorItem]];
     [firstMenu addItemWithTitle:@"关闭窗口" action:@selector(quitAction) keyEquivalent:@"w"];
     [firstMenu addItem:[NSMenuItem separatorItem]];
@@ -67,11 +67,6 @@
 - (void)quitAction
 {
     [NSApp terminate:self];
-}
-
-- (void)aboutAction
-{
-    
 }
 
 @end
