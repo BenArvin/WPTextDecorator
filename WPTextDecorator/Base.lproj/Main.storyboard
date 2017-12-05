@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -736,32 +736,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5Z-4l-a2k">
-                                <rect key="frame" x="515" y="356" width="38" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="roundRect" title="==&gt;" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5uL-nD-QCV">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="decorateButtonAction:" target="XfG-lQ-9wD" id="jtc-zg-9WH"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hee-hN-yRf">
-                                <rect key="frame" x="515" y="297" width="38" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="roundRect" title="&lt;==" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wit-RA-Ijj">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="recoverButtonAction:" target="XfG-lQ-9wD" id="Ovd-Rg-stn"/>
-                                </connections>
-                            </button>
-                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="q4U-nm-mYg">
-                                <rect key="frame" x="547" y="215" width="16" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sLG-k9-6mq">
                                 <rect key="frame" x="390" y="494" width="37" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -807,24 +781,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcX-mE-VsV">
-                                <rect key="frame" x="525" y="81" width="48" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Gc6-z5-fUF"/>
-                            </imageView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="decorateButton" destination="g5Z-4l-a2k" id="De0-GM-OQ5"/>
                         <outlet property="decoratedScrollView" destination="IQK-iZ-xSk" id="Mil-RX-lV4"/>
                         <outlet property="decoratedTagLabel" destination="5fc-83-iuX" id="sH8-Vo-czE"/>
                         <outlet property="decoratedTextView" destination="Gga-Ey-Hs6" id="s2Q-7H-1fJ"/>
-                        <outlet property="maskImageView" destination="gcX-mE-VsV" id="ls1-3b-jsQ"/>
                         <outlet property="originalScrollView" destination="32A-pY-kCv" id="DUq-TV-aMP"/>
                         <outlet property="originalTagLabel" destination="sLG-k9-6mq" id="H30-lW-WBi"/>
                         <outlet property="originalTextView" destination="SZh-Tg-Z6R" id="bEJ-pz-52G"/>
-                        <outlet property="progressIndicator" destination="q4U-nm-mYg" id="vfZ-Ep-OMb"/>
-                        <outlet property="recoverButton" destination="hee-hN-yRf" id="h0d-Ir-0QQ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
