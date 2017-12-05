@@ -16,11 +16,27 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    
+    [self setMenu];
+}
+
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification {
+    // Insert code here to tear down your application
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
+
+- (void)setMenu
+{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wundeclared-selector"
     NSMenu *firstMenu = [[NSMenu alloc] init];
-    [firstMenu addItemWithTitle:@"关于WPTextDecorator" action:nil keyEquivalent: @""];
+    [firstMenu addItemWithTitle:@"关于WPTextDecorator" action:@selector(aboutAction) keyEquivalent:@""];
     [firstMenu addItem:[NSMenuItem separatorItem]];
-    [firstMenu addItemWithTitle:@"关闭窗口" action:@selector(quitAction) keyEquivalent: @"w"];
+    [firstMenu addItemWithTitle:@"关闭窗口" action:@selector(quitAction) keyEquivalent:@"w"];
     [firstMenu addItem:[NSMenuItem separatorItem]];
     [firstMenu addItemWithTitle:@"退出" action:@selector(quitAction) keyEquivalent:@"q"];
     
@@ -45,21 +61,17 @@
     [mainMenu addItem:editMenuItem];
     
     [NSApplication sharedApplication].mainMenu = mainMenu;
-}
-
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
-}
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
-{
-    return YES;
+#pragma clang diagnostic pop
 }
 
 - (void)quitAction
 {
     [NSApp terminate:self];
+}
+
+- (void)aboutAction
+{
+    
 }
 
 @end
