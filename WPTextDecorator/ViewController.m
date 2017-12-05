@@ -129,7 +129,7 @@
     }
     [result insertString:@"<p style=\"text-indent: 2em\">" atIndex:0];
     [result appendString:@"</p>"];
-    [result replaceOccurrencesOfString:@"\t" withString:@"&nbsp;&nbsp;&nbsp;&nbsp;" options:NSLiteralSearch range:NSMakeRange(0, result.length)];
+    [result replaceOccurrencesOfString:@"\t" withString:@"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" options:NSLiteralSearch range:NSMakeRange(0, result.length)];
     return result;
 }
 
