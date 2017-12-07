@@ -19,6 +19,9 @@
 #define MARGIN_SCROLLVIEWS_X         20
 #define MARGIN_SCROLLVIEW_TAGLABEL_Y 10
 
+static NSString *const headString = @"<p style=\"text-indent: 2em; margin:0px 0px 0px 0px;\">";
+static NSString *const tailString = @"</p>";
+
 @interface ViewController() <NSTextViewDelegate>
 
 @property (weak) IBOutlet NSScrollView *originalScrollView;
@@ -125,9 +128,10 @@
     [result replaceOccurrencesOfString:@"\n\t" withString:@"\n" options:NSLiteralSearch range:NSMakeRange(0, result.length)];
     [result replaceOccurrencesOfString:@"\n    " withString:@"\n" options:NSLiteralSearch range:NSMakeRange(0, result.length)];
     if ([originalText rangeOfString:@"\n"].location != NSNotFound) {
-        [result replaceOccurrencesOfString:@"\n" withString:@"</p>\n<p style=\"text-indent: 2em\">" options:NSLiteralSearch range:NSMakeRange(0, result.length)];
+        [result replaceOccurrencesOfString:@"\n" withString:[NSString stringWithFormat:@"%@\n%@", tailString, headString] options:NSLiteralSearch range:NSMakeRange(0, result.length)];
     }
-    [result insertString:@"<p style=\"text-indent: 2em\">" atIndex:0];
+    [result replaceOccurrencesOfString:[NSString stringWithFormat:@"%@%@", headString, tailString] withString:@"<br/>" options:NSLiteralSearch range:NSMakeRange(0, result.length)];
+    [result insertString:@"<p style=\"text-indent: 2em; margin:0px 0px 0px 0px;\">" atIndex:0];
     [result appendString:@"</p>"];
     [result replaceOccurrencesOfString:@"\t" withString:@"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" options:NSLiteralSearch range:NSMakeRange(0, result.length)];
     return result;
