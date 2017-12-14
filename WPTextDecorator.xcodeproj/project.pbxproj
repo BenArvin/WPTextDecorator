@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		256A8F431FE13455005152ED /* NSString+WPTDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 256A8F421FE13455005152ED /* NSString+WPTDCategory.m */; };
+		258D8DAC1FE27AA700AFD5C2 /* NSMutableString+WPTDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D8DAB1FE27AA700AFD5C2 /* NSMutableString+WPTDCategory.m */; };
+		258D8DAF1FE2818700AFD5C2 /* NSArray+WPTDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 258D8DAE1FE2818700AFD5C2 /* NSArray+WPTDCategory.m */; };
 		E46316721FD5837400240D5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E46316711FD5837400240D5B /* AppDelegate.m */; };
 		E46316751FD5837400240D5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46316741FD5837400240D5B /* ViewController.m */; };
 		E46316771FD5837400240D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46316761FD5837400240D5B /* Assets.xcassets */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		256A8F411FE13455005152ED /* NSString+WPTDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+WPTDCategory.h"; sourceTree = "<group>"; };
+		256A8F421FE13455005152ED /* NSString+WPTDCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+WPTDCategory.m"; sourceTree = "<group>"; };
+		258D8DAA1FE27AA700AFD5C2 /* NSMutableString+WPTDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+WPTDCategory.h"; sourceTree = "<group>"; };
+		258D8DAB1FE27AA700AFD5C2 /* NSMutableString+WPTDCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+WPTDCategory.m"; sourceTree = "<group>"; };
+		258D8DAD1FE2818700AFD5C2 /* NSArray+WPTDCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+WPTDCategory.h"; sourceTree = "<group>"; };
+		258D8DAE1FE2818700AFD5C2 /* NSArray+WPTDCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WPTDCategory.m"; sourceTree = "<group>"; };
 		E463166D1FD5837400240D5B /* WPTextDecorator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPTextDecorator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46316701FD5837400240D5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E46316711FD5837400240D5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -104,6 +113,12 @@
 				E46316711FD5837400240D5B /* AppDelegate.m */,
 				E46316731FD5837400240D5B /* ViewController.h */,
 				E46316741FD5837400240D5B /* ViewController.m */,
+				256A8F411FE13455005152ED /* NSString+WPTDCategory.h */,
+				256A8F421FE13455005152ED /* NSString+WPTDCategory.m */,
+				258D8DAA1FE27AA700AFD5C2 /* NSMutableString+WPTDCategory.h */,
+				258D8DAB1FE27AA700AFD5C2 /* NSMutableString+WPTDCategory.m */,
+				258D8DAD1FE2818700AFD5C2 /* NSArray+WPTDCategory.h */,
+				258D8DAE1FE2818700AFD5C2 /* NSArray+WPTDCategory.m */,
 				E46316761FD5837400240D5B /* Assets.xcassets */,
 				E46316781FD5837400240D5B /* Main.storyboard */,
 				E463167B1FD5837400240D5B /* Info.plist */,
@@ -264,8 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46316751FD5837400240D5B /* ViewController.m in Sources */,
+				258D8DAC1FE27AA700AFD5C2 /* NSMutableString+WPTDCategory.m in Sources */,
 				E463167D1FD5837400240D5B /* main.m in Sources */,
+				256A8F431FE13455005152ED /* NSString+WPTDCategory.m in Sources */,
 				E46316721FD5837400240D5B /* AppDelegate.m in Sources */,
+				258D8DAF1FE2818700AFD5C2 /* NSArray+WPTDCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString *const WPTDMainMenuIndentActionNotification;
+extern NSString *const WPTDMainMenuUnindentActionNotification;
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 

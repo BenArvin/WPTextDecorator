@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+NSString *const WPTDMainMenuIndentActionNotification = @"WPTDMainMenuIndentActionNotification";
+NSString *const WPTDMainMenuUnindentActionNotification = @"WPTDMainMenuUnindentActionNotification";
+
 @interface AppDelegate ()
 
 @end
@@ -34,24 +37,27 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wundeclared-selector"
     NSMenu *firstMenu = [[NSMenu alloc] init];
-    [firstMenu addItemWithTitle:@"关于WPTextDecorator" action:nil keyEquivalent:@""];
+    [firstMenu addItemWithTitle:@"About WPTextDecorator" action:nil keyEquivalent:@""];
     [firstMenu addItem:[NSMenuItem separatorItem]];
-    [firstMenu addItemWithTitle:@"关闭窗口" action:@selector(quitAction) keyEquivalent:@"w"];
+    [firstMenu addItemWithTitle:@"Close" action:@selector(quitAction) keyEquivalent:@"w"];
     [firstMenu addItem:[NSMenuItem separatorItem]];
-    [firstMenu addItemWithTitle:@"退出" action:@selector(quitAction) keyEquivalent:@"q"];
+    [firstMenu addItemWithTitle:@"Quit" action:@selector(quitAction) keyEquivalent:@"q"];
     
     NSMenuItem *firstMenuItem = [[NSMenuItem alloc] init];
     firstMenuItem.submenu = firstMenu;
     
     NSMenu *editMenu = [[NSMenu alloc] initWithTitle:@"Edit"];
-    [editMenu addItemWithTitle:@"全选" action:@selector(selectAll:) keyEquivalent:@"a"];
+    [editMenu addItemWithTitle:@"Select All" action:@selector(selectAll:) keyEquivalent:@"a"];
     [editMenu addItem:[NSMenuItem separatorItem]];
-    [editMenu addItemWithTitle:@"撤销" action:@selector(undo:) keyEquivalent:@"z"];
-    [editMenu addItemWithTitle:@"重做" action:@selector(redo:) keyEquivalent:@"Z"];
+    [editMenu addItemWithTitle:@"Undo" action:@selector(undo:) keyEquivalent:@"z"];
+    [editMenu addItemWithTitle:@"Redo" action:@selector(redo:) keyEquivalent:@"Z"];
     [editMenu addItem:[NSMenuItem separatorItem]];
-    [editMenu addItemWithTitle:@"剪切" action:@selector(cut:) keyEquivalent:@"x"];
-    [editMenu addItemWithTitle:@"复制" action:@selector(copy:) keyEquivalent:@"c"];
-    [editMenu addItemWithTitle:@"粘贴" action:@selector(paste:) keyEquivalent:@"v"];
+    [editMenu addItemWithTitle:@"Cut" action:@selector(cut:) keyEquivalent:@"x"];
+    [editMenu addItemWithTitle:@"Copy" action:@selector(copy:) keyEquivalent:@"c"];
+    [editMenu addItemWithTitle:@"Paste" action:@selector(paste:) keyEquivalent:@"v"];
+    [editMenu addItem:[NSMenuItem separatorItem]];
+    [editMenu addItemWithTitle:@"Indent" action:@selector(indentAction) keyEquivalent:@"]"];
+    [editMenu addItemWithTitle:@"Unindent" action:@selector(unindentAction) keyEquivalent:@"["];
     
     NSMenuItem *editMenuItem = [[NSMenuItem alloc] init];
     editMenuItem.submenu = editMenu;
@@ -67,6 +73,16 @@
 - (void)quitAction
 {
     [NSApp terminate:self];
+}
+
+- (void)indentAction
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WPTDMainMenuIndentActionNotification object:nil];
+}
+
+- (void)unindentAction
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WPTDMainMenuUnindentActionNotification object:nil];
 }
 
 @end
