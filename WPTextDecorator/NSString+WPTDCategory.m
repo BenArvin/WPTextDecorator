@@ -10,36 +10,6 @@
 
 @implementation NSString (WPTDCategory)
 
-- (NSUInteger)WPTD_countOccurencesOfString:(NSString *)string options:(NSStringCompareOptions)options range:(NSRange)range
-{
-    NSRange trueRange = range;
-    if (trueRange.location == NSNotFound) {
-        trueRange = NSMakeRange(0, self.length);
-    } else if (trueRange.length == 0) {
-        return 0;
-    } else if (trueRange.location >= self.length) {
-        return 0;
-    } else if (trueRange.location + trueRange.length > self.length) {
-        trueRange = NSMakeRange(trueRange.location, self.length - trueRange.location);
-    }
-    
-    NSUInteger startLocation = trueRange.location;
-    NSUInteger endLocation = trueRange.location + trueRange.length;
-    BOOL count = 0;
-    BOOL finished = NO;
-    do {
-        NSRange findResult = [self rangeOfString:string options:options range:NSMakeRange(startLocation, endLocation - startLocation)];
-        if (findResult.location == NSNotFound) {
-            finished = YES;
-        } else {
-            count++;
-            startLocation = findResult.location + findResult.length;
-        }
-    } while (!finished);
-    
-    return count;
-}
-
 - (NSArray *)WPTD_rangesOfString:(NSString *)string options:(NSStringCompareOptions)options range:(NSRange)range
 {
     NSRange trueRange = range;
@@ -70,6 +40,22 @@
         }
     } while (!finished);
     return result;
+}
+
+- (NSArray *)WPTD_rangesOfRegexp:(NSString *)regexp options:(NSRegularExpressionOptions)options range:(NSRange)range
+{
+    NSArray <NSTextCheckingResult *> *matches = [self WPTD_matchesOfRegexp:regexp options:options range:range];
+    if (!matches || matches.count == 0) {
+        return nil;
+    }
+    NSMutableArray *ranges = nil;
+    for (NSTextCheckingResult *result in matches) {
+        if (!ranges) {
+            ranges = [[NSMutableArray alloc] init];
+        }
+        [ranges addObject:NSStringFromRange(result.range)];
+    }
+    return ranges;
 }
 
 - (NSArray <NSTextCheckingResult *> *)WPTD_matchesOfRegexp:(NSString *)regexp options:(NSRegularExpressionOptions)options range:(NSRange)range

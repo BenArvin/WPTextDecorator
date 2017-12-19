@@ -10,6 +10,8 @@
 
 extern NSString *const WPTDMainMenuIndentActionNotification;
 extern NSString *const WPTDMainMenuUnindentActionNotification;
+extern NSString *const WPTDMainMenuFindActionNotification;
+extern NSString *const WPTDMainMenuReplaceActionNotification;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 

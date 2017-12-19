@@ -10,6 +10,7 @@
 
 @interface NSMutableString (WPTDCategory)
 
+- (void)WPTD_replaceCharactersInAscendingRanges:(NSArray *)ranges withString:(NSString *)replacement;
 - (void)WPTD_replaceOccurrencesOfRegexp:(NSString *)regexp withString:(NSString *)replacement options:(NSRegularExpressionOptions)options range:(NSRange)range;
 
 @end

@@ -10,8 +10,8 @@
 
 @interface NSString (WPTDCategory)
 
-- (NSUInteger)WPTD_countOccurencesOfString:(NSString *)string options:(NSStringCompareOptions)options range:(NSRange)range;
 - (NSArray *)WPTD_rangesOfString:(NSString *)string options:(NSStringCompareOptions)options range:(NSRange)range;
+- (NSArray *)WPTD_rangesOfRegexp:(NSString *)regexp options:(NSRegularExpressionOptions)options range:(NSRange)range;
 - (NSArray <NSTextCheckingResult *> *)WPTD_matchesOfRegexp:(NSString *)regexp options:(NSRegularExpressionOptions)options range:(NSRange)range;
 
 @end

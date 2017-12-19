@@ -10,6 +10,8 @@
 
 NSString *const WPTDMainMenuIndentActionNotification = @"WPTDMainMenuIndentActionNotification";
 NSString *const WPTDMainMenuUnindentActionNotification = @"WPTDMainMenuUnindentActionNotification";
+NSString *const WPTDMainMenuFindActionNotification = @"WPTDMainMenuFindActionNotification";
+NSString *const WPTDMainMenuReplaceActionNotification = @"WPTDMainMenuReplaceActionNotification";
 
 @interface AppDelegate ()
 
@@ -46,9 +48,13 @@ NSString *const WPTDMainMenuUnindentActionNotification = @"WPTDMainMenuUnindentA
     NSMenuItem *firstMenuItem = [[NSMenuItem alloc] init];
     firstMenuItem.submenu = firstMenu;
     
+    NSMenu *selectionMenu = [[NSMenu alloc] initWithTitle:@"Selection"];
+    [selectionMenu addItemWithTitle:@"Select All" action:@selector(selectAll:) keyEquivalent:@"a"];
+    
+    NSMenuItem *selectionMenuItem = [[NSMenuItem alloc] init];
+    selectionMenuItem.submenu = selectionMenu;
+    
     NSMenu *editMenu = [[NSMenu alloc] initWithTitle:@"Edit"];
-    [editMenu addItemWithTitle:@"Select All" action:@selector(selectAll:) keyEquivalent:@"a"];
-    [editMenu addItem:[NSMenuItem separatorItem]];
     [editMenu addItemWithTitle:@"Undo" action:@selector(undo:) keyEquivalent:@"z"];
     [editMenu addItemWithTitle:@"Redo" action:@selector(redo:) keyEquivalent:@"Z"];
     [editMenu addItem:[NSMenuItem separatorItem]];
@@ -62,9 +68,20 @@ NSString *const WPTDMainMenuUnindentActionNotification = @"WPTDMainMenuUnindentA
     NSMenuItem *editMenuItem = [[NSMenuItem alloc] init];
     editMenuItem.submenu = editMenu;
     
+    NSMenu *findMenu = [[NSMenu alloc] initWithTitle:@"Find"];
+    [findMenu addItemWithTitle:@"Find" action:@selector(findAction) keyEquivalent:@"f"];
+    NSMenuItem *replaceItem = [[NSMenuItem alloc] initWithTitle:@"Replace" action:@selector(replaceAction) keyEquivalent:@"f"];
+    replaceItem.keyEquivalentModifierMask = NSEventModifierFlagCommand | NSEventModifierFlagOption;
+    [findMenu addItem:replaceItem];
+    
+    NSMenuItem *findMenuItem = [[NSMenuItem alloc] init];
+    findMenuItem.submenu = findMenu;
+    
     NSMenu *mainMenu = [[NSMenu alloc] init];
     [mainMenu addItem:firstMenuItem];
+    [mainMenu addItem:selectionMenuItem];
     [mainMenu addItem:editMenuItem];
+    [mainMenu addItem:findMenuItem];
     
     [NSApplication sharedApplication].mainMenu = mainMenu;
 #pragma clang diagnostic pop
@@ -83,6 +100,16 @@ NSString *const WPTDMainMenuUnindentActionNotification = @"WPTDMainMenuUnindentA
 - (void)unindentAction
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:WPTDMainMenuUnindentActionNotification object:nil];
+}
+
+- (void)findAction
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WPTDMainMenuFindActionNotification object:nil];
+}
+
+- (void)replaceAction
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:WPTDMainMenuReplaceActionNotification object:nil];
 }
 
 @end
