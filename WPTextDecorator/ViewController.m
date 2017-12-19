@@ -159,7 +159,49 @@ static NSString *const tailString = @"</p>";
 
 - (IBAction)replaceButtonAction:(id)sender
 {
+    NSString *originalString = self.originalTextView.textStorage.mutableString.copy;
+    NSRange originalSelectedRange = self.originalTextView.selectedRange;
     
+    if (!self.findResultRanges) {
+        if (self.shouldRefind) {
+            [self getFindActionResult];
+        } else {
+            return;
+        }
+    } else if (self.findResultRanges.count == 0) {
+        return;
+    }
+    NSRange rangeForReplace = NSRangeFromString([self.findResultRanges objectAtIndex:self.currentHighlightedIndex]);
+    NSString *replacement = self.replaceContextTextField.stringValue;
+    [self.originalTextView.textStorage.mutableString replaceCharactersInRange:rangeForReplace withString:replacement];
+    [self.findResultRanges removeObjectAtIndex:self.currentHighlightedIndex];
+    if (self.currentHighlightedIndex >= self.findResultRanges.count) {
+        self.currentHighlightedIndex = 0;
+    }
+    NSInteger shiftingCount = replacement.length - rangeForReplace.length;
+    for (NSInteger i=0; i<self.findResultRanges.count; i++) {
+        NSRange range = NSRangeFromString([self.findResultRanges objectAtIndex:i]);
+        if (range.location > rangeForReplace.location) {
+            [self.findResultRanges replaceObjectAtIndex:i withObject:NSStringFromRange(NSMakeRange(range.location + shiftingCount, range.length))];
+        }
+    }
+    [self styleFindResultWithHighlightedIndex:self.currentHighlightedIndex];
+    if (self.findResultRanges.count > 0) {
+        self.currentSelectedLocation = NSRangeFromString([self.findResultRanges objectAtIndex:self.currentHighlightedIndex]).location;
+    } else {
+        self.currentSelectedLocation = 0;
+    }
+    
+    [self textDidChangeAction];
+    
+    [self.originalTextView.undoManager registerUndoWithTarget:self handler:^(id  _Nonnull target) {
+        if ([target respondsToSelector:@selector(resetContext:selectedRange:)]) {
+            [target resetContext:originalString selectedRange:originalSelectedRange];
+        }
+        if ([target respondsToSelector:@selector(textDidChangeAction)]) {
+            [target textDidChangeAction];
+        }
+    }];
 }
 
 - (IBAction)replaceAllButtonAction:(id)sender
@@ -167,6 +209,15 @@ static NSString *const tailString = @"</p>";
     NSString *originalString = self.originalTextView.textStorage.mutableString.copy;
     NSRange originalSelectedRange = self.originalTextView.selectedRange;
     
+    if (!self.findResultRanges) {
+        if (self.shouldRefind) {
+            [self getFindActionResult];
+        } else {
+            return;
+        }
+    } else if (self.findResultRanges.count == 0) {
+        return;
+    }
     [self.originalTextView.textStorage.mutableString WPTD_replaceCharactersInAscendingRanges:self.findResultRanges withString:self.replaceContextTextField.stringValue];
     [self cleanAllContextStyle];
     [self.originalTextView setSelectedRange:NSMakeRange(0, 0)];
@@ -176,7 +227,7 @@ static NSString *const tailString = @"</p>";
     self.currentSelectedLocation = 0;
     
     [self textDidChangeAction];
-    
+
     [self.originalTextView.undoManager registerUndoWithTarget:self handler:^(id  _Nonnull target) {
         if ([target respondsToSelector:@selector(resetContext:selectedRange:)]) {
             [target resetContext:originalString selectedRange:originalSelectedRange];
@@ -198,6 +249,10 @@ static NSString *const tailString = @"</p>";
 {
     if (notification.object == self.originalTextView) {
         [self cleanAllContextStyle];
+        self.shouldRefind = YES;
+        self.currentHighlightedIndex = 0;
+        self.currentSelectedLocation = 0;
+        self.findResultRanges = nil;
     }
 }
 
