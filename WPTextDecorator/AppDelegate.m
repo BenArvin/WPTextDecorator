@@ -7,13 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "WPTDIntroductionViewController.h"
 
 NSString *const WPTDMainMenuIndentActionNotification = @"WPTDMainMenuIndentActionNotification";
 NSString *const WPTDMainMenuUnindentActionNotification = @"WPTDMainMenuUnindentActionNotification";
 NSString *const WPTDMainMenuFindActionNotification = @"WPTDMainMenuFindActionNotification";
 NSString *const WPTDMainMenuReplaceActionNotification = @"WPTDMainMenuReplaceActionNotification";
 
-@interface AppDelegate ()
+@interface AppDelegate () <NSWindowDelegate>
+
+@property (nonatomic) WPTDIntroductionViewController *introductionViewController;
+@property (nonatomic) NSWindow *introductionWindow;
 
 @end
 
@@ -34,12 +38,21 @@ NSString *const WPTDMainMenuReplaceActionNotification = @"WPTDMainMenuReplaceAct
     return YES;
 }
 
+#pragma mark - NSWindowDelegate
+- (void)windowWillClose:(NSNotification *)notification
+{
+    if (notification.object == self.introductionWindow) {
+        [[NSApplication sharedApplication] stopModal];
+    }
+}
+
+#pragma mark - menu method
 - (void)setMenu
 {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wundeclared-selector"
     NSMenu *firstMenu = [[NSMenu alloc] init];
-    [firstMenu addItemWithTitle:@"About WPTextDecorator" action:nil keyEquivalent:@""];
+    [firstMenu addItemWithTitle:@"About WPTextDecorator" action:@selector(introductionAction) keyEquivalent:@""];
     [firstMenu addItem:[NSMenuItem separatorItem]];
     [firstMenu addItemWithTitle:@"Close" action:@selector(quitAction) keyEquivalent:@"w"];
     [firstMenu addItem:[NSMenuItem separatorItem]];
@@ -85,6 +98,23 @@ NSString *const WPTDMainMenuReplaceActionNotification = @"WPTDMainMenuReplaceAct
     
     [NSApplication sharedApplication].mainMenu = mainMenu;
 #pragma clang diagnostic pop
+}
+
+#pragma mark - selector method
+- (void)introductionAction
+{
+    if (!self.introductionWindow) {
+        CGRect frame = [WPTDIntroductionViewController defaultBounds];
+        
+        self.introductionViewController = [[WPTDIntroductionViewController alloc] init];
+        self.introductionViewController.view = [[NSView alloc] initWithFrame:frame];
+        
+        self.introductionWindow = [[NSWindow alloc] initWithContentRect:frame styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable backing:NSBackingStoreBuffered defer:YES];
+        self.introductionWindow.delegate = self;
+        [self.introductionWindow setContentViewController:self.introductionViewController];
+    }
+    
+    [[NSApplication sharedApplication] runModalForWindow:self.introductionWindow];
 }
 
 - (void)quitAction
