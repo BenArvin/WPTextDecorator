@@ -3,7 +3,7 @@
 
 1.对文字增加css样式，以满足WordPress文章的样式要求
 </br>
-(Add css style in text for better display effect within WordPress article)
+(Add css style into text for better display effect within WordPress article)
 </br>
 </br>
 2.使用方式：获取工程并运行，或直接直接下载/releasedPackage路径中.dmg文件

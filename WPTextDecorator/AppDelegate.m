@@ -55,7 +55,6 @@ NSString *const WPTDMainMenuReplaceActionNotification = @"WPTDMainMenuReplaceAct
     [firstMenu addItemWithTitle:@"About WPTextDecorator" action:@selector(introductionAction) keyEquivalent:@""];
     [firstMenu addItem:[NSMenuItem separatorItem]];
     [firstMenu addItemWithTitle:@"Close" action:@selector(quitAction) keyEquivalent:@"w"];
-    [firstMenu addItem:[NSMenuItem separatorItem]];
     [firstMenu addItemWithTitle:@"Quit" action:@selector(quitAction) keyEquivalent:@"q"];
     
     NSMenuItem *firstMenuItem = [[NSMenuItem alloc] init];

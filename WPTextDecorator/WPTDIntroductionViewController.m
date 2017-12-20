@@ -55,7 +55,7 @@
     self.versionTextField.selectable = YES;
     self.versionTextField.bordered = NO;
     self.versionTextField.backgroundColor = [NSColor clearColor];
-    [self.versionTextField setStringValue:@"Version: 1.1"];
+    [self.versionTextField setStringValue:[NSString stringWithFormat:@"Version: %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]];
     [self.view addSubview:self.versionTextField];
     
     self.sourceCodeTextField = [[NSTextField alloc] init];

@@ -74,6 +74,7 @@ static NSString *const tailString = @"</p>";
     self.shouldRefind = YES;
     
     self.originalTextView.delegate = self;
+    [self.originalScrollView.contentView setPostsBoundsChangedNotifications:YES];
     [self.originalScrollView becomeFirstResponder];
     [self setElementsStyle];
     
@@ -83,6 +84,7 @@ static NSString *const tailString = @"</p>";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menuReplaceAction) name:WPTDMainMenuReplaceActionNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(controlTextDidChangeAction:) name:NSControlTextDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewDidBecomeFirstResponderAction:) name:WPTDTextViewDidBecomeFirstResponder object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(boundsDidChangeAction:) name:NSViewBoundsDidChangeNotification object:nil];
 }
 
 - (void)viewWillLayout
@@ -221,6 +223,7 @@ static NSString *const tailString = @"</p>";
     [self.originalTextView.textStorage.mutableString WPTD_replaceCharactersInAscendingRanges:self.findResultRanges withString:[self convertedReplacement]];
     [self cleanAllContextStyle];
     [self.originalTextView setSelectedRange:NSMakeRange(0, 0)];
+    [self.originalTextView scrollPoint:NSMakePoint(0, 0)];
     self.shouldRefind = YES;
     self.findResultRanges = nil;
     self.currentHighlightedIndex = 0;
@@ -253,6 +256,15 @@ static NSString *const tailString = @"</p>";
         self.currentHighlightedIndex = 0;
         self.currentSelectedLocation = 0;
         self.findResultRanges = nil;
+    }
+}
+
+- (void)boundsDidChangeAction:(NSNotification *)notification
+{
+    if (notification.object == self.originalScrollView.contentView) {
+        CGRect originalScrollViewBounds = self.originalScrollView.contentView.bounds;
+        CGRect decoratedScrollViewBounds = self.decoratedScrollView.contentView.bounds;
+        [self.decoratedTextView scrollPoint:NSMakePoint(0, decoratedScrollViewBounds.size.height * (originalScrollViewBounds.origin.y / originalScrollViewBounds.size.height))];
     }
 }
 
@@ -561,6 +573,7 @@ static NSString *const tailString = @"</p>";
         }
     }
     [self.originalTextView.textStorage setAttributedString:styledContext];
+    [self.originalTextView scrollRangeToVisible:NSMakeRange(self.currentSelectedLocation, 0)];
 }
 
 - (void)cleanAllContextStyle
