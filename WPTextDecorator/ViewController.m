@@ -172,7 +172,7 @@ static NSString *const tailString = @"</p>";
         return;
     }
     NSRange rangeForReplace = NSRangeFromString([self.findResultRanges objectAtIndex:self.currentHighlightedIndex]);
-    NSString *replacement = self.replaceContextTextField.stringValue;
+    NSString *replacement = [self convertedReplacement];
     [self.originalTextView.textStorage.mutableString replaceCharactersInRange:rangeForReplace withString:replacement];
     [self.findResultRanges removeObjectAtIndex:self.currentHighlightedIndex];
     if (self.currentHighlightedIndex >= self.findResultRanges.count) {
@@ -218,7 +218,7 @@ static NSString *const tailString = @"</p>";
     } else if (self.findResultRanges.count == 0) {
         return;
     }
-    [self.originalTextView.textStorage.mutableString WPTD_replaceCharactersInAscendingRanges:self.findResultRanges withString:self.replaceContextTextField.stringValue];
+    [self.originalTextView.textStorage.mutableString WPTD_replaceCharactersInAscendingRanges:self.findResultRanges withString:[self convertedReplacement]];
     [self cleanAllContextStyle];
     [self.originalTextView setSelectedRange:NSMakeRange(0, 0)];
     self.shouldRefind = YES;
@@ -484,8 +484,8 @@ static NSString *const tailString = @"</p>";
         [self setElementsFrame];
     }
     self.currentSelectedLocation = self.originalTextView.selectedRange.location;
-    self.findContextTextField.enabled = YES;
-    self.replaceContextTextField.enabled = YES;
+    self.findContextTextField.editable = YES;
+    self.replaceContextTextField.editable = YES;
     [self.findContextTextField becomeFirstResponder];
 }
 
@@ -497,8 +497,8 @@ static NSString *const tailString = @"</p>";
     [self cleanAllContextStyle];
     [self.originalScrollView becomeFirstResponder];
     [self.originalTextView setSelectedRange:NSMakeRange(self.currentSelectedLocation, 0)];
-    self.findContextTextField.enabled = NO;
-    self.replaceContextTextField.enabled = NO;
+    self.findContextTextField.editable = NO;
+    self.replaceContextTextField.editable = NO;
     self.findElementsDisplaying = NO;
     [self setElementsFrame];
 }
@@ -516,6 +516,20 @@ static NSString *const tailString = @"</p>";
         }
     }
     [self styleFindResultWithHighlightedIndex:self.currentHighlightedIndex];
+}
+
+- (NSString *)convertedReplacement
+{
+    NSString *replacement = self.replaceContextTextField.stringValue;
+    if (self.regularExpressionCheckBox.cell.state == NSOnState) {
+        NSMutableString *tmpString = replacement.mutableCopy;
+        [tmpString replaceOccurrencesOfString:@"\\r" withString:@"\r" options:NSLiteralSearch range:NSMakeRange(0, tmpString.length)];
+        [tmpString replaceOccurrencesOfString:@"\\n" withString:@"\n" options:NSLiteralSearch range:NSMakeRange(0, tmpString.length)];
+        [tmpString replaceOccurrencesOfString:@"\\t" withString:@"\t" options:NSLiteralSearch range:NSMakeRange(0, tmpString.length)];
+        return tmpString;
+    } else {
+        return replacement;
+    }
 }
 
 - (void)getFindActionResult
