@@ -262,9 +262,11 @@ static NSString *const tailString = @"</p>";
 - (void)boundsDidChangeAction:(NSNotification *)notification
 {
     if (notification.object == self.originalScrollView.contentView) {
-        CGRect originalScrollViewBounds = self.originalScrollView.contentView.bounds;
-        CGRect decoratedScrollViewBounds = self.decoratedScrollView.contentView.bounds;
-        [self.decoratedTextView scrollPoint:NSMakePoint(0, decoratedScrollViewBounds.size.height * (originalScrollViewBounds.origin.y / originalScrollViewBounds.size.height))];
+        CGRect originalScrollBounds = self.originalScrollView.bounds;
+        CGRect originalContentBounds = self.originalScrollView.documentView.bounds;
+        CGRect decoratedScrollBounds = self.decoratedScrollView.bounds;
+        CGRect decoratedContentBounds = self.decoratedScrollView.documentView.bounds;
+        [self.decoratedTextView scrollPoint:NSMakePoint(0, ((decoratedContentBounds.size.height - decoratedScrollBounds.size.height) * self.originalScrollView.contentView.bounds.origin.y) / (originalContentBounds.size.height - originalScrollBounds.size.height))];
     }
 }
 
